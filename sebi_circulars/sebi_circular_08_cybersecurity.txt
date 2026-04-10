@@ -1,0 +1,23 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/MRD/TPD/CIR/2024/008
+August 15, 2024
+
+Subject: Cybersecurity and Cyber Resilience Framework (CSCRF) for SEBI Regulated Entities
+
+1. GOVERNANCE REQUIREMENTS
+Market Infrastructure Institutions (MIIs) shall: constitute a Technology Committee of the Board, appoint CISO at Senior Management level, and report cybersecurity incidents to SEBI within 6 hours of detection. Other regulated entities (brokers, AMCs) shall appoint designated CISO and report incidents within 24 hours.
+
+2. MANDATORY TECHNICAL CONTROLS
+Multi-Factor Authentication (MFA) for all critical systems. End-to-end encryption for data in transit. Data encryption at rest for sensitive investor data. Privileged Access Management (PAM) solution. Security Information and Event Management (SIEM) system.
+
+3. NETWORK SECURITY
+Next-generation firewall. Intrusion Detection and Prevention System (IDS/IPS). DDoS protection. Network segmentation — DMZ, internal, and trading networks.
+
+4. CYBER AUDIT
+Annual comprehensive cyber audit by CERT-In empanelled auditor. Quarterly vulnerability assessment and penetration testing (VAPT). Audit reports submitted to SEBI within 30 days of completion.
+
+5. INCIDENT RESPONSE
+Entities shall maintain Cyber Incident Response Plan (CIRP). Minimum 2 cybersecurity drills per year. BCP for cyber incidents with RTO of 4 hours for critical systems.
+
+6. DATA LOCALISATION
+All trading data and investor data of Indian clients shall be stored within India. Cloud services for critical data shall use India-based data centres only.

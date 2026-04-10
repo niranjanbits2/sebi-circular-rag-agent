@@ -1,0 +1,62 @@
+[
+  {
+    "id": "SEBI/HO/IVD/SEC2/CIR/2024/001",
+    "date": "January 15, 2024",
+    "subject": "Amendment to SEBI (Prohibition of Insider Trading) Regulations \u2014 UPSI Definition and Trading Window",
+    "filename": "sebi_circular_01_insider_trading.txt"
+  },
+  {
+    "id": "SEBI/HO/MRD/DP/CIR/2024/002",
+    "date": "February 3, 2024",
+    "subject": "Revised Framework for Futures and Options (F&O) Margin Requirements",
+    "filename": "sebi_circular_02_fo_margins.txt"
+  },
+  {
+    "id": "SEBI/HO/MRD/DRMNP/CIR/2024/003",
+    "date": "March 10, 2024",
+    "subject": "Comprehensive Framework for Algorithmic Trading and Co-location Facilities",
+    "filename": "sebi_circular_03_algo_trading.txt"
+  },
+  {
+    "id": "SEBI/HO/CFD/CMD/CIR/2024/004",
+    "date": "April 5, 2024",
+    "subject": "ESG Disclosure Requirements \u2014 Business Responsibility and Sustainability Report (BRSR)",
+    "filename": "sebi_circular_04_esg_disclosure.txt"
+  },
+  {
+    "id": "SEBI/HO/IMD/IMD-II/CIR/2024/005",
+    "date": "May 12, 2024",
+    "subject": "Revised Regulations for Mutual Funds \u2014 Risk-o-Meter, Expense Ratio and Direct Plan",
+    "filename": "sebi_circular_05_mutual_funds.txt"
+  },
+  {
+    "id": "SEBI/HO/CFD/DIL2/CIR/2024/006",
+    "date": "June 20, 2024",
+    "subject": "Revised Guidelines for IPO and Draft Red Herring Prospectus (DRHP)",
+    "filename": "sebi_circular_06_ipo_guidelines.txt"
+  },
+  {
+    "id": "SEBI/HO/CFD/CMD1/CIR/2024/007",
+    "date": "July 8, 2024",
+    "subject": "Strengthening Framework for Related Party Transactions (RPT) for Listed Companies",
+    "filename": "sebi_circular_07_related_party.txt"
+  },
+  {
+    "id": "SEBI/HO/MRD/TPD/CIR/2024/008",
+    "date": "August 15, 2024",
+    "subject": "Cybersecurity and Cyber Resilience Framework (CSCRF) for SEBI Regulated Entities",
+    "filename": "sebi_circular_08_cybersecurity.txt"
+  },
+  {
+    "id": "SEBI/HO/AFD/AFD-II/CIR/2024/009",
+    "date": "September 22, 2024",
+    "subject": "Revised Framework for Alternative Investment Funds (AIF) \u2014 Category I, II and III",
+    "filename": "sebi_circular_09_aif.txt"
+  },
+  {
+    "id": "SEBI/HO/MIRSD/SECFATF/CIR/2024/010",
+    "date": "October 30, 2024",
+    "subject": "Enhanced KYC, AML and CFT Requirements for SEBI Registered Intermediaries",
+    "filename": "sebi_circular_10_kyc_aml.txt"
+  }
+]

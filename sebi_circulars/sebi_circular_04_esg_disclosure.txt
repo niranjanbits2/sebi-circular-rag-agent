@@ -1,0 +1,22 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/CFD/CMD/CIR/2024/004
+April 5, 2024
+
+Subject: Enhanced ESG Disclosure Framework — BRSR Core and Third-Party Assurance Requirements
+
+1. BRSR CORE — MANDATORY KPIs
+Environment: GHG emissions (Scope 1, 2, 3), water consumption, energy consumption (renewable and non-renewable), waste generation and disposal.
+Social: Employee diversity (gender, differently-abled), employee turnover rate, median wages for permanent employees, occupational health and safety incidents.
+Governance: Transparency on complaints/grievances, cybersecurity incidents, anti-corruption policy compliance.
+
+2. ASSURANCE REQUIREMENTS
+Top 150 listed companies by market cap: Reasonable assurance on BRSR Core from FY 2023-24.
+Top 250 listed companies: Limited assurance from FY 2024-25.
+Top 500 listed companies: Limited assurance from FY 2025-26.
+Top 1000 listed companies: Self-certification from FY 2023-24.
+
+3. VALUE CHAIN DISCLOSURES
+Listed companies shall disclose BRSR Core metrics for value chain partners contributing to 75% of purchases/sales by value.
+
+4. PENALTIES
+Non-disclosure attracts penalty under SEBI (LODR) Regulations. False disclosure attracts action under Section 15HA of SEBI Act.

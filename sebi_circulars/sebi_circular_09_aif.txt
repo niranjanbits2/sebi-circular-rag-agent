@@ -1,0 +1,26 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/AFD/AFD-II/CIR/2024/009
+September 22, 2024
+
+Subject: Revised Framework for Alternative Investment Funds (AIF) — Enhanced Investor Protection and Disclosure
+
+1. AIF CATEGORIES
+Category I AIF: Invests in start-ups, early stage ventures, social ventures, SMEs, and infrastructure.
+Category II AIF: Real estate funds, private equity funds, debt funds, fund of funds — no specific incentives.
+Category III AIF: Employs diverse or complex trading strategies including listed or unlisted derivatives.
+
+2. MINIMUM INVESTMENT AND CORPUS
+Minimum investment per investor: INR 1 crore (employees/directors of AIF: INR 25 lakh). Minimum corpus of each scheme: INR 20 crore.
+
+3. LEVERAGE LIMITS
+Category I and II AIFs: No leverage except temporary funding needs not exceeding 30 days.
+Category III AIFs: Maximum leverage of 2 times NAV. Open-ended Category III: Maximum 1.5 times NAV.
+
+4. DISCLOSURE REQUIREMENTS
+Quarterly report to investors within 60 days of end of quarter. Annual audited financial statements within 180 days of year end. Monthly portfolio disclosure for Category III.
+
+5. VALUATION
+All AIFs shall appoint independent valuer. Valuation policy shall be disclosed in Private Placement Memorandum (PPM). Category III AIFs investing in listed securities: mark-to-market valuation daily.
+
+6. INVESTOR GRIEVANCE
+All AIFs shall register on SEBI SCORES platform. Grievances shall be resolved within 21 working days.

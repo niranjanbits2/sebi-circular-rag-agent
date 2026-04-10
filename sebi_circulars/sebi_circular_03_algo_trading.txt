@@ -1,0 +1,24 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/MRD/DRMNP/CIR/2024/003
+March 10, 2024
+
+Subject: Comprehensive Framework for Algorithmic Trading, High Frequency Trading (HFT) and Co-location Facilities
+
+1. DEFINITION AND SCOPE
+Algorithmic Trading means any order generated using automated execution logic where the decision to trade is taken by a computer program, order placement is automated, and no human intervention is required.
+High Frequency Trading (HFT) is a subset of algorithmic trading characterised by high order-to-trade ratio, latency measured in microseconds, and holding period of less than one day.
+
+2. APPROVAL REQUIREMENTS
+All algorithms shall be approved by the stock exchange prior to deployment. Approval process includes logic review, simulation testing on exchange test environment, kill switch functionality verification, and risk parameter verification. Any material change to an approved algorithm requires fresh approval.
+
+3. MANDATORY RISK CONTROLS
+All algorithmic systems shall have: automated order-level risk checks, maximum order quantity limit, maximum order value limit per second, price band checks, cumulative daily loss limit, and automatic kill switch triggered at 70% of daily loss limit.
+
+4. CO-LOCATION FACILITY
+Stock exchanges offering co-location shall ensure equal latency for all subscribers, no preferential access to market data, and transparent pricing. A lottery system shall be used for allocation when demand exceeds supply.
+
+5. ORDER-TO-TRADE RATIO
+Maximum order-to-trade ratio: 100:1 for any trading session. Penalty for exceeding OTR: INR 1 lakh per violation per day.
+
+6. AUDIT TRAIL
+All algorithmic orders shall have a unique algo ID tag. Complete audit trail shall be maintained for 5 years.

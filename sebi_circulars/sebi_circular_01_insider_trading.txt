@@ -1,0 +1,33 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/IVD/SEC2/CIR/2024/001
+January 15, 2024
+
+Subject: Amendment to SEBI (Prohibition of Insider Trading) Regulations, 2015 — Clarification on UPSI and Trading Window Closure
+
+1. BACKGROUND
+This circular is issued under Section 11(1) of SEBI Act, 1992. SEBI (Prohibition of Insider Trading) Regulations, 2015 prohibit trading in securities by insiders who possess UPSI.
+
+2. DEFINITION OF UPSI
+Unpublished Price Sensitive Information (UPSI) includes:
+(a) Financial results — quarterly, half-yearly, and annual
+(b) Dividends — interim and final
+(c) Change in capital structure including buy-back, rights issue, bonus issue
+(d) Mergers, acquisitions, demergers, amalgamations
+(e) Major expansion plans or new projects
+(f) Changes in key managerial personnel — MD, CEO, CFO, whole-time directors
+(g) Material litigation where exposure exceeds 10% of net worth
+Information ceases to be UPSI upon public disclosure through stock exchange filings.
+
+3. TRADING WINDOW CLOSURE
+The trading window shall be closed from the end of every quarter until 48 hours after declaration of financial results. For events in clause 2(c) through (g), trading window closes from board meeting date until 48 hours after public announcement. Designated persons shall not trade during closure irrespective of whether they possess UPSI.
+
+4. STRUCTURED DIGITAL DATABASE (SDD)
+Every listed company shall maintain SDD containing: names of persons who share UPSI, nature of UPSI shared, date of sharing, and purpose. SDD shall be preserved for minimum 8 years.
+
+5. PRE-CLEARANCE REQUIREMENTS
+Designated persons shall pre-clear trades above INR 10 lakh in any calendar quarter. Pre-clearance from Compliance Officer at least 2 trading days prior. Pre-cleared trades must execute within 7 trading days or fresh pre-clearance required.
+
+6. PENALTIES
+Violation may attract civil penalty up to INR 25 crore or 3 times profit made, criminal prosecution with imprisonment up to 10 years, and disgorgement of profits.
+
+Issued under: SEBI Act 1992, Section 11(1)

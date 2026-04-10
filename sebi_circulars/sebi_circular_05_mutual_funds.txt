@@ -1,0 +1,25 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/IMD/IMD-II/CIR/2024/005
+May 12, 2024
+
+Subject: Revised Framework for Mutual Funds — Risk-o-Meter Enhancement, Expense Ratio and Investor Protection
+
+1. RISK-O-METER
+Risk-o-Meter shall be updated from monthly to weekly basis for all open-ended mutual fund schemes. Risk levels: Low, Low to Moderate, Moderate, Moderately High, High, Very High. AMCs shall send SMS and email alerts whenever Risk-o-Meter changes.
+
+2. EXPENSE RATIO — REVISED LIMITS FOR EQUITY SCHEMES
+AUM up to INR 500 crore: Maximum 2.25%
+AUM INR 500–750 crore: Maximum 2.00%
+AUM INR 750–2,000 crore: Maximum 1.75%
+AUM INR 2,000–5,000 crore: Maximum 1.60%
+AUM above INR 5,000 crore: Maximum 1.05%
+Debt schemes: TER limits 25 basis points lower than equity. Exit load shall not be charged in addition to TER.
+
+3. DIRECT PLAN
+Expense ratio of Direct Plan shall be lower than Regular Plan by at least the trail commission paid to distributors. AMCs shall prominently disclose the difference in returns between Direct and Regular plans.
+
+4. PERFORMANCE BENCHMARKING
+All mutual fund schemes shall be benchmarked against Total Return Index (TRI). Flexi-cap, Multi-cap, and Large & Mid Cap funds shall have two benchmarks.
+
+5. SCHEME CATEGORISATION
+AMCs can have only one scheme per category except: Index funds and ETFs, Fund of Funds, and Sectoral/Thematic funds.

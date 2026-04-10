@@ -1,0 +1,24 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/MIRSD/SECFATF/CIR/2024/010
+October 30, 2024
+
+Subject: Enhanced KYC, AML and CFT Requirements for SEBI Registered Intermediaries
+
+1. KYC REQUIREMENTS
+Mandatory documents — Identity Proof: Aadhaar, PAN, Passport, Voter ID, Driving Licence. Address Proof: Aadhaar, utility bills (not older than 2 months), bank statement. PAN is mandatory for all market transactions.
+Risk-based KYC: Low Risk — simplified KYC, Medium Risk — standard KYC, High Risk — Enhanced Due Diligence (EDD). Politically Exposed Persons (PEPs) classified as High Risk automatically.
+
+2. BENEFICIAL OWNERSHIP
+For non-individual clients, beneficial owner is the natural person who holds more than 25% shares, exercises control over management, or on whose behalf transaction is conducted. Identification of beneficial owner is mandatory.
+
+3. TRANSACTION MONITORING
+Intermediaries shall implement automated transaction monitoring systems. Suspicious Transaction Reports (STR) shall be filed with FIU-India within 7 days of suspicion. Cash Transaction Reports (CTR) for transactions above INR 10 lakh shall be filed monthly.
+
+4. RECORD KEEPING
+KYC records: maintained for 5 years after account closure. Transaction records: maintained for 5 years from transaction date.
+
+5. PERIODIC KYC UPDATE
+High Risk clients: update every 2 years. Medium Risk clients: update every 8 years. Low Risk clients: update every 10 years.
+
+6. CENTRALISED KYC (CKYC)
+All intermediaries shall upload KYC records to Central KYC Registry (CKYCR). CKYC number shall be used for all subsequent account openings.

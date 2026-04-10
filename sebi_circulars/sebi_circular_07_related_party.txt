@@ -1,0 +1,20 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/CFD/CMD1/CIR/2024/007
+July 8, 2024
+
+Subject: Strengthening the Framework for Related Party Transactions (RPT) — Enhanced Disclosure and Shareholder Approval
+
+1. DEFINITION OF RELATED PARTY
+Related Party includes: promoter or promoter group entity, director or KMP and their relatives, subsidiary or associate companies, any entity over which promoter/director exercises significant influence (>20% voting rights).
+
+2. MATERIAL RPT THRESHOLD
+A transaction is material if: value exceeds INR 1,000 crore OR value exceeds 10% of annual consolidated turnover, whichever is lower. All material RPTs require shareholder approval through ordinary resolution. Related parties shall not vote on resolutions in which they are interested.
+
+3. AUDIT COMMITTEE APPROVAL
+All RPTs require prior Audit Committee approval. Omnibus approval for recurring transactions: maximum validity one financial year, shall specify maximum value and price formula.
+
+4. DISCLOSURE REQUIREMENTS
+Half-yearly disclosure to stock exchanges within 21 days of end of each half-year. Annual disclosure in Annual Report. Disclosures must include: name and relationship of related party, type and amount of transaction, terms including pricing policy, and justification.
+
+5. ENHANCED REQUIREMENTS
+For RPTs involving asset transfer: mandatory independent valuation report. For RPTs above INR 500 crore: mandatory fairness opinion from merchant banker.

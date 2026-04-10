@@ -1,0 +1,35 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/MRD/DP/CIR/2024/002
+February 3, 2024
+
+Subject: Revised Framework for Futures and Options (F&O) Segment — Enhanced Margin Requirements and Position Limits
+
+1. BACKGROUND
+SEBI has reviewed the existing F&O margin framework to strengthen risk management and protect retail investors from excessive leverage. This circular supersedes SEBI/HO/MRD/DP/CIR/2022/045.
+
+2. REVISED MARGIN REQUIREMENTS
+SPAN Margin (Initial Margin):
+- Minimum 15% of contract value for index derivatives
+- Minimum 20% of contract value for stock derivatives
+
+Exposure Margin:
+- Index futures: 2% of contract value
+- Stock futures: 5% of contract value or 1.5 standard deviations, whichever is higher
+
+Extreme Loss Margin (ELM):
+- Index derivatives: 3% of contract value
+- Stock derivatives: Higher of 5% or 1.5 times standard deviation of daily logarithmic returns
+
+3. POSITION LIMITS
+Client Level: For index derivatives, gross open position shall not exceed 1% of free float market capitalisation. For stock derivatives, lower of 1% of free float market cap or INR 500 crore.
+Trading Member Level: 15% of total open interest or INR 2,000 crore, whichever is lower.
+
+4. INTRADAY MONITORING
+Exchanges shall monitor margins on intraday basis. If margin falls below 75% of required level, member must replenish immediately. If not replenished within 60 minutes, exchange may initiate risk-reduction mode.
+
+5. WEEKLY EXPIRY CONTRACTS
+Only weekly expiry contracts of benchmark indices (Nifty 50, Sensex) shall be permitted. All other index option weekly contracts shall be discontinued. Minimum contract size for index derivatives shall be INR 15 lakh.
+
+6. IMPLEMENTATION
+Phase 1 (March 1, 2024): Revised SPAN and Exposure margins
+Phase 2 (April 1, 2024): Revised position limits and weekly expiry restrictions

@@ -1,0 +1,23 @@
+SECURITIES AND EXCHANGE BOARD OF INDIA
+CIRCULAR — SEBI/HO/CFD/DIL2/CIR/2024/006
+June 20, 2024
+
+Subject: Revised Guidelines for IPO, DRHP and Anchor Investor Framework
+
+1. DRHP FILING
+DRHP shall be filed simultaneously with SEBI and stock exchanges. DRHP shall be publicly available for 21 days for public comments. Issue size above INR 100 crore requires mandatory DRHP filing.
+
+2. OBJECTS OF THE ISSUE
+Companies shall disclose detailed utilisation plan with quarter-wise timeline, estimated costs, and monitoring agency for issues above INR 100 crore. General corporate purpose shall not exceed 25% of total issue size.
+
+3. PROMOTER LOCK-IN
+Minimum promoter contribution: 20% of post-issue paid-up capital.
+Lock-in: Minimum promoter contribution locked for 18 months from allotment. Excess promoter holding locked for 6 months. Pre-IPO investors (holding >1 year): 6 months lock-in.
+
+4. ANCHOR INVESTOR FRAMEWORK
+Up to 60% of QIB portion can be allocated to anchor investors. Minimum application: INR 10 crore.
+Lock-in: 50% of anchor allocation for 90 days, remaining 50% for 30 days.
+
+5. PRICE BAND AND ALLOTMENT
+Minimum price band spread: 105% of floor price. Price band disclosed at least 2 working days before opening.
+Minimum allotment lot value: INR 15,000. Refund timeline: T+6 working days. Listing within T+6 working days.
