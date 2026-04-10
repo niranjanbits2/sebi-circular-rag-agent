@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEBI Circular Intelligence — Chat</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root {
+    --bg:#F7F8FC;--bg2:#FFFFFF;--bg3:#EEF2FF;
+    --accent:#1D4ED8;--accent2:#1E40AF;--accent-lt:#EFF6FF;
+    --red:#DC2626;--amber:#D97706;--amber-lt:#FFFBEB;
+    --green:#16A34A;--green-lt:#F0FDF4;
+    --text:#111827;--text2:#6B7280;--text3:#9CA3AF;
+    --border:#E5E7EB;--shadow:0 1px 3px rgba(0,0,0,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);
+    height:100vh;display:flex;flex-direction:column;overflow:hidden}
+  .topbar{background:#C8102E;padding:4px 24px;display:flex;align-items:center;
+    justify-content:space-between;flex-shrink:0}
+  .topbar-left{font-size:11px;font-weight:600;color:white;letter-spacing:.3px}
+  .topbar-right{font-size:10px;color:rgba(255,255,255,.85);font-family:'JetBrains Mono',monospace}
+  .header{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 24px;
+    display:flex;align-items:center;justify-content:space-between;flex-shrink:0;box-shadow:var(--shadow)}
+  .header-left{display:flex;align-items:center;gap:12px}
+  .logo{width:38px;height:38px;background:var(--accent);border-radius:10px;display:flex;
+    align-items:center;justify-content:center;font-weight:700;font-size:11px;color:white;
+    box-shadow:0 2px 8px rgba(29,78,216,.25);text-align:center;line-height:1.2}
+  .header-title{font-size:15px;font-weight:600}
+  .header-sub{font-size:11px;color:var(--text2);margin-top:1px}
+  .status-pill{display:flex;align-items:center;gap:6px;background:var(--green-lt);
+    border:1px solid #BBF7D0;border-radius:20px;padding:4px 10px;
+    font-size:11px;font-weight:500;color:var(--green)}
+  .status-dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+    animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .stats{display:flex;gap:6px}
+  .stat-pill{display:flex;align-items:center;gap:5px;background:var(--bg3);
+    border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:11px}
+  .stat-pill .num{font-weight:700;font-size:13px;font-family:'JetBrains Mono',monospace}
+  .api-banner{background:var(--amber-lt);border-bottom:1px solid #FDE68A;
+    padding:8px 24px;display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .api-banner input{flex:1;max-width:380px;background:white;border:1.5px solid #FDE68A;
+    border-radius:8px;padding:6px 12px;color:var(--text);
+    font-family:'JetBrains Mono',monospace;font-size:12px;outline:none}
+  .api-banner input:focus{border-color:var(--amber)}
+  .api-btn{background:var(--amber);border:none;border-radius:8px;padding:6px 16px;
+    color:white;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+  .api-note{font-size:11px;color:var(--amber)}
+  .chat-area{flex:1;overflow-y:auto;padding:16px 20px 8px;
+    display:flex;flex-direction:column;gap:14px;scroll-behavior:smooth}
+  .chat-area::-webkit-scrollbar{width:5px}
+  .chat-area::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+  .msg{display:flex;gap:8px;animation:fadeUp .25s ease}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  .msg.user{flex-direction:row-reverse}
+  .avatar{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;
+    justify-content:center;font-size:10px;font-weight:600;flex-shrink:0}
+  .avatar.agent{background:var(--accent);color:white;box-shadow:0 2px 6px rgba(29,78,216,.2)}
+  .avatar.user{background:var(--bg3);color:var(--text2);border:1px solid var(--border)}
+  .bubble{max-width:76%;padding:11px 15px;border-radius:14px;font-size:13.5px;
+    line-height:1.7;box-shadow:var(--shadow)}
+  .bubble.agent{background:var(--bg2);border:1px solid var(--border);
+    border-top-left-radius:4px;color:var(--text)}
+  .bubble.user{background:var(--accent);color:white;border-top-right-radius:4px}
+  .bubble strong{font-weight:600;color:var(--accent2)}
+  .bubble.user strong{color:white}
+  .source-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .source-chip{background:var(--accent-lt);border:1px solid #BFDBFE;border-radius:6px;
+    padding:2px 8px;font-size:10px;font-weight:500;color:var(--accent);
+    font-family:'JetBrains Mono',monospace}
+  .typing{display:flex;gap:4px;align-items:center;padding:4px 0}
+  .typing span{width:6px;height:6px;border-radius:50%;background:var(--text3);
+    animation:bounce 1.2s infinite}
+  .typing span:nth-child(2){animation-delay:.2s}
+  .typing span:nth-child(3){animation-delay:.4s}
+  @keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+  .suggestions{display:flex;flex-wrap:wrap;gap:6px;padding:0 20px 10px}
+  .suggestion{background:var(--bg2);border:1px solid var(--border);border-radius:20px;
+    padding:5px 13px;font-size:12px;font-weight:500;color:var(--accent);cursor:pointer;
+    transition:all .15s;white-space:nowrap;box-shadow:var(--shadow)}
+  .suggestion:hover{background:var(--accent-lt);border-color:var(--accent);
+    transform:translateY(-1px)}
+  .input-area{padding:10px 20px 16px;flex-shrink:0;background:var(--bg2);
+    border-top:1px solid var(--border)}
+  .input-row{display:flex;gap:8px;align-items:flex-end}
+  .input-wrap{flex:1;background:var(--bg);border:1.5px solid var(--border);
+    border-radius:12px;padding:9px 14px;display:flex;align-items:center;
+    transition:border-color .2s,box-shadow .2s}
+  .input-wrap:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(29,78,216,.08)}
+  #userInput{flex:1;background:none;border:none;outline:none;color:var(--text);
+    font-family:'Inter',sans-serif;font-size:14px;resize:none;max-height:100px}
+  #userInput::placeholder{color:var(--text3)}
+  .send-btn{width:40px;height:40px;background:var(--accent);border:none;border-radius:10px;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:all .15s;flex-shrink:0;box-shadow:0 2px 6px rgba(29,78,216,.25)}
+  .send-btn:hover{background:var(--accent2);transform:translateY(-1px)}
+  .send-btn svg{width:17px;height:17px;fill:white}
+  .welcome{text-align:center;padding:28px 20px;color:var(--text2)}
+  .welcome-icon{font-size:44px;margin-bottom:14px}
+  .welcome h2{color:var(--text);font-size:18px;font-weight:600;margin-bottom:8px}
+  .welcome p{font-size:13px;line-height:1.65;max-width:460px;margin:0 auto}
+  .welcome-cards{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+  .welcome-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+    padding:10px 14px;font-size:11px;color:var(--text2);box-shadow:var(--shadow);
+    min-width:80px;text-align:center}
+  .welcome-card .num{font-size:18px;font-weight:700;margin-bottom:2px;
+    font-family:'JetBrains Mono',monospace}
+  .powered{font-size:10px;color:var(--text3);text-align:center;padding:5px;
+    font-family:'JetBrains Mono',monospace;background:var(--bg2)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">TechM Agentic AI Trainings &nbsp;—&nbsp; Internal</div>
+  <div class="topbar-right">Demo: SEBI Circular RAG Agent &nbsp;|&nbsp; Not for production use</div>
+</div>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">SEBI</div>
+    <div>
+      <div class="header-title">SEBI Circular Intelligence</div>
+      <div class="header-sub">Securities Regulations Q&A &nbsp;|&nbsp; LangChain + FAISS + Amazon Bedrock Nova Lite</div>
+    </div>
+    <div class="status-pill"><div class="status-dot"></div>Ready</div>
+  </div>
+  <div class="stats">
+    <div class="stat-pill"><span class="num" style="color:var(--accent)">10</span><span style="color:var(--text2)">Circulars</span></div>
+    <div class="stat-pill"><span class="num" style="color:var(--green)">120+</span><span style="color:var(--text2)">Chunks</span></div>
+    <div class="stat-pill"><span class="num" style="color:var(--amber)">RAG</span><span style="color:var(--text2)">Pipeline</span></div>
+  </div>
+</div>
+
+<div class="api-banner" id="apiBanner">
+  <span class="api-note">🔑 Anthropic API key:</span>
+  <input type="password" id="apiKeyInput" placeholder="sk-ant-api03-..." />
+  <button class="api-btn" onclick="saveKey()">Save & Start</button>
+  <span class="api-note">Get from console.anthropic.com → API Keys</span>
+</div>
+
+<div class="chat-area" id="chatArea">
+  <div class="welcome">
+    <div class="welcome-icon">🏛️</div>
+    <h2>Ask me about SEBI regulations</h2>
+    <p>I've indexed 10 SEBI circulars covering insider trading, F&O margins, algo trading, mutual funds, IPO rules, cybersecurity, ESG, PMS and more.</p>
+    <div class="welcome-cards">
+      <div class="welcome-card"><div class="num" style="color:var(--accent)">10</div>Circulars</div>
+      <div class="welcome-card"><div class="num" style="color:var(--green)">120+</div>Chunks</div>
+      <div class="welcome-card"><div class="num" style="color:var(--amber)">~3s</div>Response</div>
+      <div class="welcome-card"><div class="num" style="color:var(--red)">RAG</div>Grounded</div>
+    </div>
+  </div>
+</div>
+
+<div class="suggestions" id="suggestions">
+  <div class="suggestion" onclick="sendSuggestion(this)">📋 Insider trading rules</div>
+  <div class="suggestion" onclick="sendSuggestion(this)">📈 F&O margin requirements</div>
+  <div class="suggestion" onclick="sendSuggestion(this)">🔒 IPO lock-in rules</div>
+  <div class="suggestion" onclick="sendSuggestion(this)">🌱 What is BRSR?</div>
+  <div class="suggestion" onclick="sendSuggestion(this)">💻 Cybersecurity for brokers</div>
+  <div class="suggestion" onclick="sendSuggestion(this)">📮 How does SCORES 2.0 work?</div>
+</div>
+
+<div class="input-area">
+  <div class="input-row">
+    <div class="input-wrap">
+      <textarea id="userInput" rows="1"
+        placeholder="Ask any SEBI regulation question..."
+        onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+    </div>
+    <button class="send-btn" onclick="sendMessage()">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
+<div class="powered">TechM Agentic AI Trainings — Internal &nbsp;|&nbsp; LangChain + FAISS + Amazon Bedrock Nova Lite &nbsp;|&nbsp; us-east-1</div>
+
+<script>
+window.onload=function(){
+  const saved=localStorage.getItem('sebi_api_key');
+  if(saved) document.getElementById('apiBanner').style.display='none';
+};
+function saveKey(){
+  const key=document.getElementById('apiKeyInput').value.trim();
+  if(!key.startsWith('sk-ant')){alert('Please enter a valid Anthropic API key (starts with sk-ant-)');return;}
+  localStorage.setItem('sebi_api_key',key);
+  document.getElementById('apiBanner').style.display='none';
+}
+
+// Embedded circular data for browser-based RAG (simplified)
+const CIRCULARS=[
+  {id:"CIR001",topic:"Insider Trading",circ:"SEBI/HO/ISD/2024/001",date:"Jan 15 2024",
+   content:"Trading window closes 48 hours after quarterly financial results declaration. Designated persons and immediate relatives cannot trade when window is closed. Pre-clearance required for trades above INR 10 lakh — must apply 2 trading days in advance. Pre-cleared trades must execute within 7 trading days. Contra trade restriction: no buy after sell within 6 months. UPSI includes financial results, dividends, mergers, KMP changes, litigation above INR 100 crore. Structured Digital Database must be maintained for 8 years. Penalty: up to INR 25 crore or 3 times profits for trading on UPSI."},
+  {id:"CIR002",topic:"F&O Margins",circ:"SEBI/HO/MRD/2024/002",date:"Feb 5 2024",
+   content:"SPAN margin for index futures: 8% of contract value. SPAN margin for stock futures: 15% of contract value or 1.5x VaR, whichever is higher. Exposure margin for index derivatives: 3%. Exposure margin for stock derivatives: 5% or 1.5 sigma. Extreme Loss Margin: 1.5% for index, 3.5% for stocks. Upfront margin must be collected before order placement. Peak margin captured at 4 random snapshots daily. Short margin penalty: 0.5% per day. Eligible margin: Cash 100%, G-Secs 90%, AAA bonds 80%, Equity top 200 stocks 50%."},
+  {id:"CIR003",topic:"Algo Trading",circ:"SEBI/HO/MRD/2024/003",date:"Mar 12 2024",
+   content:"All algo providers must register with SEBI. Minimum net worth INR 2 crore. All algos must be approved by broker with unique algo ID. Kill switch must activate within 1 second to stop all orders. Prohibited: layering, spoofing, front-running, quote stuffing, momentum ignition. Algo providers must disclose backtested returns 3 years, live performance, maximum drawdown, Sharpe ratio. Past performance disclaimer mandatory. No guaranteed return claims permitted. Logs must be maintained 5 years."},
+  {id:"CIR004",topic:"Mutual Funds",circ:"SEBI/HO/IMD/2024/004",date:"Apr 3 2024",
+   content:"Full portfolio must be disclosed on AMFI website within 10 days of month end. Risk-O-Meter has 6 levels: Low, Low to Moderate, Moderate, Moderately High, High, Very High. Risk-O-Meter reviewed monthly — investors notified if level changes. Total Expense Ratio disclosed daily. TER max limits: Equity schemes 2.25%, Debt schemes 2%, Index funds/ETFs 1%. Returns disclosed for 1 year, 3 years, 5 years, since inception vs benchmark. Swing pricing triggered when net outflow exceeds 1% of AUM in single day."},
+  {id:"CIR005",topic:"Listed Company Disclosures",circ:"SEBI/HO/CFD/2024/005",date:"May 7 2024",
+   content:"Material events must be disclosed within 24 hours: acquisition above 10% stake, fraud by promoters, settlement above INR 50 crore, regulatory actions. Events requiring 12-hour disclosure: death of MD/chairman, appointment/resignation of CEO/CFO/CS, pledge invocation above 5% of shares. Quarterly results within 45 days, annual within 60 days. Related Party Transactions above INR 1000 crore or 10% of turnover require shareholder approval. Promoter pledge changes disclosed within 7 working days. Board minimum 6 directors, at least 1/3rd independent, minimum 1 woman director."},
+  {id:"CIR006",topic:"Cybersecurity",circ:"SEBI/HO/ITD/2024/006",date:"Jun 15 2024",
+   content:"CISO mandatory for Category 1 and 2 entities — must report directly to Board. Cybersecurity policy reviewed annually by Board. MFA mandatory for all critical systems. AES-256 encryption for data at rest, TLS 1.2+ for data in transit. Critical cyber incidents reported to SEBI within 6 hours, High within 24 hours. Post-incident report within 72 hours. Annual audit by CERT-In empanelled auditor. VAPT twice a year for Category 1 and 2. RTO for Category 1: 4 hours. RPO for Category 1: real-time replication. DR drill minimum twice a year."},
+  {id:"CIR007",topic:"ESG and BRSR",circ:"SEBI/HO/CFD/2024/007",date:"Jul 22 2024",
+   content:"BRSR Core mandatory with reasonable assurance for top 150 listed entities by market cap. BRSR mandatory without assurance for top 1000 listed entities. Key ESG metrics: Scope 1 direct emissions, Scope 2 indirect from purchased energy, Scope 3 value chain emissions (top 150 only). Energy intensity per rupee of turnover. Water withdrawal by source. % of value chain partners assessed on ESG. Board composition by gender and age. Remuneration linked to ESG performance. Assurance standard: ISAE 3000 or equivalent."},
+  {id:"CIR008",topic:"IPO Guidelines",circ:"SEBI/HO/CFD/2024/008",date:"Aug 5 2024",
+   content:"Minimum promoter contribution 20% of post-issue capital, locked in for 18 months from allotment. Excess promoter holding locked for 6 months. Anchor investors: 30-day lock-in for 50% of allocation. General Corporate Purposes maximum 25% of issue size. Quarterly utilisation report of IPO proceeds mandatory. Lead managers must conduct due diligence on promoters including criminal records. Price band minimum 5% spread. T+3 listing: IPO must list within 3 working days of issue closure. ASBA unblocking on T+1 basis. Retail allotment by lottery if oversubscribed."},
+  {id:"CIR009",topic:"Portfolio Management Services",circ:"SEBI/HO/IMD/2024/009",date:"Sep 18 2024",
+   content:"Minimum investment for PMS: INR 50 lakh per client per PMS provider. Minimum net worth for PMS providers: INR 5 crore. Principal officer must have minimum 5 years experience and NISM PMS certification. Registration fee INR 10 lakh. Written investment mandate mandatory before accepting funds. Performance fee only on profits above pre-agreed hurdle rate. High watermark principle applies. No upfront fees on initial investment. Monthly reports to clients within 7 days. Maximum 25% in single stock, 40% in single sector. No leverage in discretionary PMS."},
+  {id:"CIR010",topic:"Investor Grievance SCORES 2.0",circ:"SEBI/HO/OIAE/2024/010",date:"Oct 30 2024",
+   content:"SCORES 2.0 features: auto-routing, auto-escalation, online conciliation, WhatsApp status updates. Acknowledgement within 24 hours. First response within 7 calendar days. Resolution timelines: listed companies 21 days, stock brokers 15 days, mutual funds 10 days, depository participants 10 days. Auto-escalation if not resolved in time. Serious complaints resolved in 7 days: includes non-receipt above INR 1 lakh, fraud, unauthorized transactions, senior citizen complaints. ODR award is binding and enforceable as court decree. Non-compliance penalty: INR 1000 per day per complaint."}
+];
+
+let history=[];
+
+function findRelevantChunks(question){
+  const q=question.toLowerCase();
+  const scored=CIRCULARS.map(c=>{
+    const text=(c.topic+" "+c.content).toLowerCase();
+    let score=0;
+    const words=q.split(/\s+/).filter(w=>w.length>3);
+    words.forEach(w=>{if(text.includes(w))score++;});
+    // Topic-specific boosts
+    if((q.includes('insider')||q.includes('upsi')||q.includes('pit'))&&c.topic.includes('Insider'))score+=5;
+    if((q.includes('margin')||q.includes('f&o')||q.includes('futures'))&&c.topic.includes('F&O'))score+=5;
+    if((q.includes('algo')||q.includes('algorithm'))&&c.topic.includes('Algo'))score+=5;
+    if((q.includes('mutual fund')||q.includes('ter')||q.includes('risk-o-meter'))&&c.topic.includes('Mutual'))score+=5;
+    if((q.includes('listed')||q.includes('lodr')||q.includes('disclosure')||q.includes('material'))&&c.topic.includes('Listed'))score+=5;
+    if((q.includes('cyber')||q.includes('ciso')||q.includes('security'))&&c.topic.includes('Cyber'))score+=5;
+    if((q.includes('esg')||q.includes('brsr')||q.includes('scope')||q.includes('emission'))&&c.topic.includes('ESG'))score+=5;
+    if((q.includes('ipo')||q.includes('lock-in')||q.includes('listing'))&&c.topic.includes('IPO'))score+=5;
+    if((q.includes('pms')||q.includes('portfolio management'))&&c.topic.includes('Portfolio'))score+=5;
+    if((q.includes('scores')||q.includes('grievance')||q.includes('complaint'))&&c.topic.includes('Grievance'))score+=5;
+    return {circular:c,score};
+  });
+  return scored.sort((a,b)=>b.score-a.score).slice(0,3).filter(s=>s.score>0);
+}
+
+function sendSuggestion(el){document.getElementById('userInput').value=el.textContent.replace(/^[^\w]+/,'').trim();sendMessage();}
+function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();}}
+function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,100)+'px';}
+
+async function sendMessage(){
+  const key=localStorage.getItem('sebi_api_key');
+  if(!key){document.getElementById('apiBanner').style.display='flex';return;}
+  const input=document.getElementById('userInput');
+  const msg=input.value.trim();if(!msg)return;
+  document.getElementById('suggestions').style.display='none';
+  const welcome=document.querySelector('.welcome');if(welcome)welcome.remove();
+  addUserMessage(msg);input.value='';input.style.height='auto';
+  const typingId=addTyping();
+  try{
+    const relevant=findRelevantChunks(msg);
+    const context=relevant.map(r=>
+      `[${r.circular.circ} — ${r.circular.topic}]\n${r.circular.content}`
+    ).join('\n\n---\n\n');
+    const sources=relevant.map(r=>r.circular.circ);
+    const reply=await callClaude(msg,context,sources,key);
+    removeTyping(typingId);
+    addAgentMessage(reply,sources);
+  }catch(e){
+    removeTyping(typingId);
+    addAgentMessage('Error: '+e.message+'. Check your API key or try again.',[]);
+  }
+}
+
+async function callClaude(userMsg,context,sources,apiKey){
+  const system=`You are SEBI Circular Intelligence Assistant — expert on SEBI regulations.
+Answer questions based ONLY on the provided SEBI circular excerpts.
+Be precise, cite specific circular numbers, give compliance guidance.
+Format: Direct answer → Specific rule/number → Practical implication.
+If not covered say: This is not in the loaded circulars. Refer to sebi.gov.in
+TechM Agentic AI internal training demo.
+SEBI CIRCULAR DATA:\n${context}`;
+  const messages=[...history.slice(-6),{role:'user',content:userMsg}];
+  const res=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','x-api-key':apiKey,
+      'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:700,system,messages})
+  });
+  if(!res.ok){
+    if(res.status===401){localStorage.removeItem('sebi_api_key');document.getElementById('apiBanner').style.display='flex';}
+    const err=await res.json().catch(()=>({}));
+    throw new Error(`${res.status}: ${err.error?.message||'API error'}`);
+  }
+  const data=await res.json();const reply=data.content[0].text;
+  history.push({role:'user',content:userMsg});history.push({role:'assistant',content:reply});
+  return reply;
+}
+
+function addUserMessage(text){
+  const area=document.getElementById('chatArea');
+  const div=document.createElement('div');div.className='msg user';
+  const av=document.createElement('div');av.className='avatar user';av.textContent='You';
+  const bub=document.createElement('div');bub.className='bubble user';bub.textContent=text;
+  div.appendChild(av);div.appendChild(bub);area.appendChild(div);area.scrollTop=area.scrollHeight;
+}
+function addAgentMessage(text,sources){
+  const area=document.getElementById('chatArea');
+  const div=document.createElement('div');div.className='msg agent';
+  const av=document.createElement('div');av.className='avatar agent';av.textContent='SEBI';
+  const bub=document.createElement('div');bub.className='bubble agent';
+  bub.innerHTML=text.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+  if(sources&&sources.length){
+    const chips=document.createElement('div');chips.className='source-chips';
+    sources.forEach(s=>{
+      const chip=document.createElement('span');chip.className='source-chip';
+      chip.textContent='📋 '+s;chips.appendChild(chip);
+    });
+    bub.appendChild(chips);
+  }
+  div.appendChild(av);div.appendChild(bub);area.appendChild(div);area.scrollTop=area.scrollHeight;
+}
+function addTyping(){
+  const area=document.getElementById('chatArea');
+  const div=document.createElement('div');div.className='msg agent';div.id='t'+Date.now();
+  const av=document.createElement('div');av.className='avatar agent';av.textContent='SEBI';
+  const bub=document.createElement('div');bub.className='bubble agent';
+  bub.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
+  div.appendChild(av);div.appendChild(bub);area.appendChild(div);area.scrollTop=area.scrollHeight;
+  return div.id;
+}
+function removeTyping(id){const el=document.getElementById(id);if(el)el.remove();}
+</script>
+</body>
+</html>
